@@ -4,8 +4,9 @@
 	"type": "module",
 	"description": "[*]",
 	"repository": "https://github.com/[*]",
-	"main": "[*]",
-	"module": "[*]",
+	"main": "./dist/esm/min/index.js",
+	"module": "./dist/esm/min/index.js",
+	"types": "./dist/esm/min/index.d.ts",
 	"homepage": "https://github.com/[*]#readme",
 	"bugs": {
 		"url": "https://github.com/[*]/issues"
@@ -62,11 +63,11 @@
 	},
 	"exports": {
 		".": {
-			"import": "./dist/esm/index.js",
+			"import": "./dist/esm/min/index.js",
 			"require": "./dist/cjs/index.cjs"
 		},
 		"./[*]": {
-			"import": "./dist/esm/[*]/index.js",
+			"import": "./dist/esm/min/[*]/index.js",
 			"require": "./dist/cjs/[*]/index.cjs"
 		}
 	},
@@ -80,15 +81,7 @@
 		}
 	],
 	"sideEffects": false,
-	"keywords": [
-		"fetch",
-		"api",
-		"wrapper",
-		"request",
-		"cancel",
-		"retry",
-		"interceptor"
-	],
+	"keywords": [],
 	"packageManager": "[*]@[*]",
 	"engines": {
 		"node": ">=[*].x"

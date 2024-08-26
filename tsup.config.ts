@@ -1,38 +1,49 @@
 import { type Options, defineConfig } from "tsup";
 
 export default defineConfig((options) => {
-	const isProduction = !options.watch;
+	const isDevMode = options.watch;
 
-	const commonOptions = {
+	const sharedOptions = {
 		clean: true, // clean up dist folder,
 		dts: true, // generate d.ts
-		minify: isProduction ? "terser" : false, // minify with terser, put false if you don't need terser
-		sourcemap: isProduction,
+		sourcemap: !isDevMode,
 		tsconfig: "tsconfig.json",
+	} satisfies Options;
+
+	const sharedESMOptions = {
+		format: ["esm"],
+		platform: "browser",
+		splitting: true,
+		target: "esnext",
+		treeshake: true,
 	} satisfies Options;
 
 	return [
 		{
-			...commonOptions,
-			entry: ["src/index.ts", "src/utils/index.ts"],
-			format: ["esm"],
+			...sharedOptions,
+			...sharedESMOptions,
+			entry: ["src/index.ts"],
 			name: "ESM",
 			outDir: "./dist/esm",
-			platform: "browser",
-			skipNodeModulesBundle: true, // skip building deps for node_modules, simply use them as is
-			splitting: true,
-			target: "esnext",
-			treeshake: true,
+		},
+
+		{
+			...sharedOptions,
+			...sharedESMOptions,
+			entry: ["src/index.ts"],
+			name: "ESM-MIN",
+			outDir: "./dist/esm/min",
+			minify: "terser",
 		},
 
 		// Remove if you don't need to support cjs
 		{
-			...commonOptions,
-			entry: ["src/index.ts", "src/utils/index.ts"],
+			...sharedOptions,
+			entry: ["src/index.ts"],
 			format: ["cjs"],
 			name: "CJS",
 			outDir: "./dist/cjs",
-			platform: "node",
+			platform: "neutral",
 		},
 	];
 });
