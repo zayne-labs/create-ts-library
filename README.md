@@ -29,15 +29,16 @@ To use this template, simply click the green `Use this template` button at the t
 
 - Click the `Use this template` button.
 - Create a new repository with it.
-- Install the dependencies using `pnpm install`.
 - Install the necessary github applications and bots on your repo namely:
   - [aufofix app](https://github.com/marketplace/autofix-ci) for running automatic code fixes
   - [changesets bot](https://github.com/apps/changeset-bot) for checking if there are any changesets contained in PRs
   - [pkg.pr.new app](https://github.com/apps/pkg-pr-new) for continuous testing of packages
-- Create npm token [here](https://docs.npmjs.com/creating-and-viewing-access-tokens) (Skip if you already have it handy)
-- Add it as a [secret to your repository](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-development-environment-secrets-for-your-repository-or-organization#adding-secrets-for-a-repository) (or at the organization level if you have one), using the name `"NPM_TOKEN"`
+- Create npm token [here](https://docs.npmjs.com/creating-and-viewing-access-tokens) (Skip if you already have it handy).
+- Add it as a [secret to your repository](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-development-environment-secrets-for-your-repository-or-organization#adding-secrets-for-a-repository) (or at the organization level if you have one), using the name `"NPM_TOKEN"`.
+- Install the dependencies using `pnpm install`.
+- Setup husky using `pnpm husky init`.
 - Edit the package.json file, and replace any of these: `[*]`, with the appropriate names relevant to your lib (Did this cuz comments aren't allowed in json files).
-- Test your changes by running some of the `test:*` scripts in the package.json
+- Test your changes by running some of the `test:*` scripts in the package.json.
 - Commit and push your changes.
 
 ## To publish a new version

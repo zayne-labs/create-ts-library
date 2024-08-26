@@ -3,7 +3,10 @@
 	"version": "0.0.0",
 	"type": "module",
 	"description": "[*]",
-	"repository": "https://github.com/[*]",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/[*].git"
+	},
 	"main": "./dist/esm/min/index.js",
 	"module": "./dist/esm/min/index.js",
 	"types": "./dist/esm/min/index.d.ts",
