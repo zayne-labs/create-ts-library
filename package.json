@@ -82,7 +82,6 @@
 	],
 	"sideEffects": false,
 	"keywords": [],
-	"packageManager": "[*]@[*]",
 	"engines": {
 		"node": ">=[*].x"
 	}
