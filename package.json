@@ -5,7 +5,7 @@
 	"description": "[*]",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/[*].git"
+		"url": "git+https://github.com/[*].git"
 	},
 	"main": "./dist/esm/min/index.js",
 	"module": "./dist/esm/min/index.js",
