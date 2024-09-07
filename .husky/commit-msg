@@ -1,1 +1,1 @@
-pnpm test:commitlint ${1}
+pnpm lint:commitlint ${1}
