@@ -26,6 +26,7 @@
 		"lint:commitlint": "pnpm commitlint --edit",
 		"lint:eslint": "eslint src/**/*.ts --cache --max-warnings 0 --report-unused-disable-directives",
 		"lint:format": "prettier --cache --write .",
+		"lint:packages": "pnpm dedupe --check",
 		"lint:publint": "publint --strict .",
 		"lint:size": "size-limit",
 		"prepare": "husky",
