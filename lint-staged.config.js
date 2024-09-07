@@ -1,5 +1,5 @@
 export default {
-	"*.{js,ts,jsx,tsx}": () => "pnpm test:lint",
-	"*.{ts,tsx}": () => "pnpm test:check-types",
-	"package.json": ["pnpm test:publint", "pnpm test:attw"],
+	"*.{js,ts,jsx,tsx}": () => "pnpm lint:eslint",
+	"*.{ts,tsx}": () => "pnpm lint:check-types",
+	"package.json": ["pnpm lint:publint", "pnpm lint:attw"],
 };

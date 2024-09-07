@@ -37,7 +37,7 @@ To use this template, simply click the green `Use this template` button at the t
 - Add it as a [secret to your repository](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-development-environment-secrets-for-your-repository-or-organization#adding-secrets-for-a-repository) (or at the organization level if you have one), using the name `"NPM_TOKEN"`.
 - Install the dependencies using `pnpm install`.
 	- Edit the package.json file, and replace any of these: `[*]`, with the appropriate names relevant to your lib (Did this cuz comments aren't allowed in json files).
-- Test your changes by running some of the `test:*` scripts in the package.json.
+- Lint your changes by running some of the `lint:*` scripts in the package.json.
 - Commit and push your changes.
 
 ## To publish a new version
