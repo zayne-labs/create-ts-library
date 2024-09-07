@@ -33,7 +33,7 @@
 		"inspect:eslint-config": "pnpx @eslint/config-inspector@latest"
 	},
 	"devDependencies": {
-		"@arethetypeswrong/cli": "^0.15.4",
+		"@arethetypeswrong/cli": "^0.16.0",
 		"@changesets/cli": "^2.27.8",
 		"@eslint/js": "^9.9.1",
 		"@size-limit/esbuild-why": "^11.1.4",
