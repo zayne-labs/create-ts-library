@@ -18,7 +18,7 @@
 	"author": "[*]",
 	"scripts": {
 		"build:dev": "cross-env NODE_ENV=development tsup",
-		"build:test": "concurrently --prefix-colors \"yellow.bold,#7da4f8.bold,magenta\" --names PUBLINT,TSUP,ATTW 'pnpm:test:publint' 'pnpm:build:dev' 'pnpm:test:attw'",
+		"build:test": "concurrently --prefix-colors \"yellow.bold,#7da4f8.bold,magenta\" --names PUBLINT,TSUP,ATTW 'pnpm:lint:publint' 'pnpm:build:dev' 'pnpm:lint:attw'",
 		"build": "tsup",
 		"inspect:eslint-config": "pnpx @eslint/config-inspector@latest",
 		"lint:attw": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
