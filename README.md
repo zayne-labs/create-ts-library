@@ -36,8 +36,7 @@ To use this template, simply click the green `Use this template` button at the t
 - Create npm token [here](https://docs.npmjs.com/creating-and-viewing-access-tokens) (Skip if you already have it handy).
 - Add it as a [secret to your repository](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-development-environment-secrets-for-your-repository-or-organization#adding-secrets-for-a-repository) (or at the organization level if you have one), using the name `"NPM_TOKEN"`.
 - Install the dependencies using `pnpm install`.
-- Setup husky using `pnpm husky init`.
-- Edit the package.json file, and replace any of these: `[*]`, with the appropriate names relevant to your lib (Did this cuz comments aren't allowed in json files).
+	- Edit the package.json file, and replace any of these: `[*]`, with the appropriate names relevant to your lib (Did this cuz comments aren't allowed in json files).
 - Test your changes by running some of the `test:*` scripts in the package.json.
 - Commit and push your changes.
 
@@ -46,6 +45,6 @@ To use this template, simply click the green `Use this template` button at the t
  - Follow the prompts
  - Push to github
  - Wait for the changeset action to finish and if it's successful, you should see a pr created by the changeset bot
- - Merging it will lead to the version increase, release and publishing of the package
+ - Merging it will lead to the version bump, release and publishing of the package
 
 
