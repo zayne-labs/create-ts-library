@@ -1,0 +1,1 @@
+pnpm test:commitlint ${1}

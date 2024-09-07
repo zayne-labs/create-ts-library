@@ -20,6 +20,7 @@
 		"prepare": "husky",
 		"test:check-types": "tsc --pretty --incremental -p tsconfig.json",
 		"test:format": "prettier --cache --write .",
+		"test:commitlint": "pnpm commitlint --edit",
 		"test:lint": "eslint src/**/*.ts --cache --max-warnings 0 --report-unused-disable-directives",
 		"test:size": "size-limit",
 		"test:publint": "publint --strict .",
@@ -28,6 +29,7 @@
 		"build": "tsup",
 		"build:dev": "cross-env NODE_ENV=development tsup",
 		"build:test": "concurrently --prefix-colors \"yellow.bold,#7da4f8.bold,magenta\" --names PUBLINT,TSUP,ATTW 'pnpm:test:publint' 'pnpm:build:dev' 'pnpm:test:attw'",
+		"cm": "cz",
 		"version-package": "changeset version",
 		"release": "changeset publish",
 		"inspect:eslint-config": "pnpx @eslint/config-inspector@latest"
@@ -35,6 +37,8 @@
 	"devDependencies": {
 		"@arethetypeswrong/cli": "^0.16.0",
 		"@changesets/cli": "^2.27.8",
+		"@commitlint/cli": "^19.4.1",
+		"@commitlint/config-conventional": "^19.4.1",
 		"@eslint/js": "^9.10.0",
 		"@size-limit/esbuild-why": "^11.1.4",
 		"@size-limit/preset-small-lib": "^11.1.4",
@@ -43,8 +47,10 @@
 		"@types/eslint": "^9.6.1",
 		"@types/node": "^22.5.4",
 		"@zayne-labs/tsconfig": "^0.1.1",
+		"commitizen": "^4.3.0",
 		"concurrently": "^8.2.2",
 		"cross-env": "^7.0.3",
+		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^9.10.0",
 		"eslint-import-resolver-typescript": "^3.6.3",
 		"eslint-plugin-import-x": "^4.2.1",
@@ -82,6 +88,11 @@
 			"limit": "[*] kb"
 		}
 	],
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
 	"sideEffects": false,
 	"keywords": [],
 	"engines": {
