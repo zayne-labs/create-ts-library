@@ -47,7 +47,6 @@
 		"@types/eslint": "^9.6.1",
 		"@types/node": "^22.5.4",
 		"@zayne-labs/tsconfig": "^0.1.1",
-		"commitizen": "^4.3.0",
 		"concurrently": "^8.2.2",
 		"cross-env": "^7.0.3",
 		"cz-conventional-changelog": "^3.3.0",
@@ -88,11 +87,6 @@
 			"limit": "[*] kb"
 		}
 	],
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog"
-		}
-	},
 	"sideEffects": false,
 	"keywords": [],
 	"engines": {
