@@ -42,7 +42,7 @@ const eslintConfigArray = augumentedTypegen([
 
 			parser: tsEslint.parser,
 			parserOptions: {
-				project: "config/tsconfig.eslint.json",
+				project: "tsconfig.eslint.json",
 				tsconfigRootDir: import.meta.dirname,
 			},
 
