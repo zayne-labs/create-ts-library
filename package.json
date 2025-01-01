@@ -24,18 +24,18 @@
 		"version-package": "changeset version"
 	},
 	"devDependencies": {
-		"@arethetypeswrong/cli": "^0.16.4",
-		"@changesets/cli": "^2.27.9",
-		"@commitlint/cli": "^19.5.0",
-		"@commitlint/config-conventional": "^19.5.0",
-		"@types/node": "^22.10.1",
+		"@arethetypeswrong/cli": "0.16.4",
+		"@changesets/cli": "2.27.9",
+		"@commitlint/cli": "19.5.0",
+		"@commitlint/config-conventional": "19.5.0",
+		"@types/node": "22.7.6",
 		"@zayne-labs/eslint-config": "0.4.2",
 		"eslint": "9.17.0",
 		"husky": "9.1.7",
 		"lint-staged": "15.3.0",
 		"pkg-pr-new": "0.0.39",
 		"prettier": "3.4.2",
-		"typescript": "^5.7.2"
+		"typescript": "5.7.2"
 	},
 	"publishConfig": {
 		"access": "public",
