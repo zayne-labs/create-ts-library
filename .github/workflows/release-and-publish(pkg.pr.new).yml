@@ -1,4 +1,4 @@
-name: Test - Release and Publish
+name: Release and Publish - pkg.pr.new
 on:
    pull_request:
    push:
@@ -22,13 +22,13 @@ jobs:
          - name: Setup pnpm
            uses: pnpm/action-setup@v4
            with:
-              version: 9.12.2
+              version: 9.15.0
 
          - name: Setup Node.js 20.x
            uses: actions/setup-node@v4
            with:
               node-version: ${{ matrix.node-version }}
-              cache: "pnpm"
+              cache: pnpm
 
          - name: Install dependencies and build
            run: |

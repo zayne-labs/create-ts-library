@@ -1,4 +1,4 @@
-name: Changeset - Release and Publish
+name: Release and Publish - changesets
 on:
    push:
       branches: main
@@ -14,11 +14,12 @@ jobs:
       timeout-minutes: 15
       strategy:
          matrix:
-            node-version: [20.x]
+            node-version: [lts/*]
 
+      # if: ${{ github.event.workflow_run.conclusion == 'success' }}
       steps:
          - name: Checkout repo
-           uses: actions/checkout@v4
+           uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
            with:
               # This makes Actions fetch all Git history so that Changesets
               # can generate changelogs with the correct commits.
@@ -27,13 +28,13 @@ jobs:
          - name: Setup pnpm
            uses: pnpm/action-setup@v4
            with:
-              version: 9.12.2
+              version: 9.15.0
 
          - name: Setup Node.js 20.x
-           uses: actions/setup-node@v4
+           uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4
            with:
               node-version: ${{ matrix.node-version }}
-              cache: "pnpm"
+              cache: pnpm
 
          - name: Install dependencies and build
            run: |
@@ -43,8 +44,8 @@ jobs:
          - name: Create Release Pull Request or Publish to npm
            uses: changesets/action@v1
            with:
-              commit: "[ci]: release package"
-              title: "[ci]: release package"
+              commit: "ci(changesets): update package version"
+              title: "ci(changesets): update package version"
               publish: pnpm release
 
            env:
