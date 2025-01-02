@@ -37,7 +37,7 @@
 		"lint:publint": "publint --strict .",
 		"lint:size": "size-limit",
 		"release": "changeset publish",
-		"test:release": "pkg-pr-new publish"
+		"test:release": "pnpx pkg-pr-new publish"
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "0.17.0",
