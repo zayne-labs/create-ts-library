@@ -1,50 +1,82 @@
 # Create Ts Library
 
-This is an opinionated starter template for creating a library with TypeScript.
+A modern, opinionated TypeScript library starter template with best practices and comprehensive tooling setup. This template provides everything you need to build, test, and publish high-quality TypeScript libraries with minimal configuration.
 
+## Features
 
-## Usage
+- [TSUP](https://github.com/egoist/tsup) for zero-config TypeScript bundling
+- Comprehensive linting with ESLint and Prettier
+- Bundle size monitoring with [size-limit](https://github.com/ai/size-limit)
+- Automated versioning and publishing with [Changesets](https://github.com/changesets/changesets)
+- Quality checks with [publint](https://github.com/bluwy/publint) and [@arethetypeswrong/cli](https://github.com/arethetypeswrong/arethetypeswrong.github.io)
+- GitHub Actions for CI/CD
+- Continuous package testing with [pkg.pr.new](https://pkg.pr.new)
+- Pre-commit hooks with [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/lint-staged/lint-staged)
 
-To use this template, simply click the green `Use this template` button at the top right of this repo, or just fork and clone it if you prefer.
+## Quick Start
 
-## Tooling available
-- Eslint plugins for linting (customizable)
-- Prettier for formatting
-- [TSUP](https://github.com/egoist/tsup) for bundling
-- [@zayne-labs/tsconfig](https://github.com/zayne-labs/tsconfig) for relevant tsconfig presets
-- [Changesets](https://github.com/changesets/changesets) (Both cli and github action which must be installed on the repo) for versioning, publishing, release notes and changelogs
-- [publint](https://github.com/bluwy/publint) and [@arethetypeswrong/cli](https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/packages/cli/README.md) for validating package.json and checking for proper package types resolutions respectively.
-- [size-limit](https://github.com/ai/size-limit) for bundle size analysis and management
-- [lint-staged](https://github.com/lint-staged/lint-staged) for lint and types checks on staged files and [husky](https://github.com/typicode/husky) for running lint-staged before any commit and before push if you prefer
-- [pkg.pr.new](https://pkg-pr-new) for continuous testing of packages on every commit before publishing to npm.
-- Various github workflows for:
-  - Linting on ci
-  - Automatic publishing via changesets
-  - Formatting on ci via [autofix.ci](https://autofix.ci/)
-  - Labeling issues
-  - Issue assignment
-  - Continuous release testing via pkg.pr.new github action, etc.
+1. Click the green `Use this template` button at the top of this repository
+2. Clone your new repository
+3. Install dependencies:
 
-## Setup
+   ```bash
+   pnpm install
+   ```
 
-- Click the `Use this template` button.
-- Create a new repository with it.
-- Install the necessary github applications and bots on your repo namely:
-  - [aufofix app](https://github.com/marketplace/autofix-ci) for running automatic code fixes
-  - [changesets bot](https://github.com/apps/changeset-bot) for checking if there are any changesets contained in PRs
-  - [pkg.pr.new app](https://github.com/apps/pkg-pr-new) for continuous testing of packages
-- Create npm token [here](https://docs.npmjs.com/creating-and-viewing-access-tokens) (Skip if you already have it handy).
-- Add it as a [secret to your repository](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-development-environment-secrets-for-your-repository-or-organization#adding-secrets-for-a-repository) (or at the organization level if you have one), using the name `"NPM_TOKEN"`.
-- Install the dependencies using `pnpm install`.
-	- Edit the package.json file, and replace any of these: `[*]`, with the appropriate names relevant to your lib (Did this cuz comments aren't allowed in json files).
-- Lint your changes by running some of the `lint:*` scripts in the package.json.
-- Commit and push your changes.
+4. Update package details:
+   - Replace all `[*]` placeholders in `package.json` with your library details
+   - Customize the ESLint and TypeScript configurations as needed
 
-## To publish a new version
- - Create a changeset via `pnpm changeset` command
- - Follow the prompts
- - Push to github
- - Wait for the changeset action to finish and if it's successful, you should see a pr created by the changeset bot
- - Merging it will lead to the version bump, release and publishing of the package
+## Setup GitHub Integration
 
+1. Install required GitHub apps on your repository:
+   - [Autofix.ci](https://github.com/marketplace/autofix-ci) for automated code fixes
+   - [Changeset Bot](https://github.com/apps/changeset-bot) for PR changeset validation
+   - [pkg.pr.new](https://github.com/apps/pkg-pr-new) for continuous package testing
 
+2. Set up NPM publishing:
+   - Create an [NPM access token](https://docs.npmjs.com/creating-and-viewing-access-tokens)
+   - Add the token as a repository secret named `NPM_TOKEN`
+
+## Development Workflow
+
+### Available Scripts
+
+- `pnpm build` - Build all packages
+- `pnpm lint:*` - Run various linting checks:
+  - `lint:eslint` - ESLint checks
+  - `lint:format` - Prettier formatting
+  - `lint:check-types` - TypeScript type checking
+  - `lint:size` - Bundle size analysis
+  - `lint:publint` - Package publishing validation
+  - `lint:attw` - Type resolution validation
+
+### Publishing Updates
+
+1. Create a changeset:
+
+   ```bash
+   pnpm changeset
+   ```
+
+2. Follow the prompts to describe your changes
+3. Commit and push to GitHub
+4. A PR will be created by the Changeset bot
+5. Merging the PR will:
+   - Bump versions
+   - Create a GitHub release
+   - Publish to NPM
+
+## Continuous Integration
+
+The template includes GitHub Actions for:
+
+- Automated code formatting via [autofix.ci](https://autofix.ci)
+- Linting and type checking
+- Automated publishing via Changesets
+- Issue management (labeling and assignment)
+- Package testing with pkg.pr.new
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.

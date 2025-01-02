@@ -10,9 +10,6 @@
 		"dev:server": "tsx --watch src/server.ts --clear-screen=false",
 		"preview": "vite preview"
 	},
-	"dependencies": {
-		"[*]": "workspace:*"
-	},
 	"devDependencies": {
 		"@types/node": "^22.10.1",
 		"@zayne-labs/tsconfig": "0.2.1",
