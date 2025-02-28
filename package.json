@@ -26,7 +26,7 @@
 		"@commitlint/cli": "19.7.1",
 		"@commitlint/config-conventional": "19.7.1",
 		"@types/node": "22.13.5",
-		"@zayne-labs/eslint-config": "0.5.1",
+		"@zayne-labs/eslint-config": "0.6.0",
 		"eslint": "9.21.0",
 		"husky": "9.1.7",
 		"lint-staged": "15.4.3",
