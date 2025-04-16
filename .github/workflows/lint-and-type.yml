@@ -16,15 +16,15 @@ jobs:
             node-version: [20.x]
       steps:
          - name: Checkout code
-           uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+           uses: actions/checkout@v4
 
          - name: Setup pnpm
            uses: pnpm/action-setup@v4
            with:
-              version: 9.15.5
+              version: 9.15.4
 
          - name: Setup Node.js
-           uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4
+           uses: actions/setup-node@v4
            with:
               node-version: ${{ matrix.node-version }}
               cache: pnpm
@@ -36,5 +36,5 @@ jobs:
 
          - name: Run linters
            run: |
-              pnpm lint:check-types
+              pnpm lint:type-check
               pnpm lint:eslint

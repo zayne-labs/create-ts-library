@@ -17,15 +17,15 @@ jobs:
 
       steps:
          - name: Checkout repo
-           uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+           uses: actions/checkout@v4
 
          - name: Setup pnpm
            uses: pnpm/action-setup@v4
            with:
-              version: 9.15.5
+              version: 9.15.4
 
          - name: Setup Node.js 20.x
-           uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4
+           uses: actions/setup-node@v4
            with:
               node-version: ${{ matrix.node-version }}
               cache: pnpm
@@ -36,4 +36,4 @@ jobs:
               pnpm build
 
          - name: Deploy and test release via pkg.pr.new
-           run: pnpm test:release
+           run: pnpm release:test
