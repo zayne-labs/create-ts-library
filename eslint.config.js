@@ -7,7 +7,7 @@ export default zayne(
 		react: {
 			nextjs: {
 				overrides: {
-					"nextjs/no-html-link-for-pages": ["error", "apps/docs/pages"],
+					"nextjs/no-html-link-for-pages": ["error", "apps/docs"],
 				},
 			},
 		},
