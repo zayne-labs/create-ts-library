@@ -43,18 +43,17 @@
 		"release:test": "pnpx pkg-pr-new publish"
 	},
 	"devDependencies": {
-		"@arethetypeswrong/cli": "0.17.4",
-		"@size-limit/esbuild-why": "11.2.0",
-		"@size-limit/preset-small-lib": "11.2.0",
+		"@arethetypeswrong/cli": "0.18.2",
+		"@size-limit/esbuild-why": "12.0.1",
+		"@size-limit/preset-small-lib": "12.0.1",
 		"@total-typescript/ts-reset": "0.6.1",
-		"@zayne-labs/tsconfig": "0.8.1",
-		"concurrently": "9.1.2",
-		"cross-env": "7.0.3",
-		"publint": "0.3.12",
-		"size-limit": "11.2.0",
-		"terser": "5.39.0",
-		"tsup": "8.4.0",
-		"typescript": "5.8.3"
+		"@zayne-labs/tsconfig": "0.12.4",
+		"concurrently": "9.2.1",
+		"cross-env": "10.1.0",
+		"publint": "0.3.18",
+		"size-limit": "12.0.1",
+		"tsdown": "^0.21.7",
+		"typescript": "6.0.2"
 	},
 	"publishConfig": {
 		"access": "public",

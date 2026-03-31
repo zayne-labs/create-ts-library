@@ -1,17 +1,31 @@
 # Create Ts Library
 
-A modern, opinionated TypeScript library starter template with best practices and comprehensive tooling setup. This template provides everything you need to build, test, and publish high-quality TypeScript libraries with minimal configuration.
+A modern, opinionated TypeScript library starter template with best practices and comprehensive tooling. Clone this to bootstrap a production-ready TypeScript library with minimal configuration.
 
 ## Features
 
-- [TSUP](https://github.com/egoist/tsup) for zero-config TypeScript bundling
+- [tsdown](https://github.com/rolldown/tsdown) for zero-config TypeScript bundling (ESM output)
+- [Turbo](https://turbo.build) for monorepo build orchestration and caching
 - Comprehensive linting with ESLint and Prettier
 - Bundle size monitoring with [size-limit](https://github.com/ai/size-limit)
 - Automated versioning and publishing with [Changesets](https://github.com/changesets/changesets)
-- Quality checks with [publint](https://github.com/bluwy/publint) and [@arethetypeswrong/cli](https://github.com/arethetypeswrong/arethetypeswrong.github.io)
+- Package quality checks with [publint](https://github.com/bluwy/publint) and [@arethetypeswrong/cli](https://github.com/arethetypeswrong/arethetypeswrong.github.io)
 - GitHub Actions for CI/CD
 - Continuous package testing with [pkg.pr.new](https://pkg.pr.new)
 - Pre-commit hooks with [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/lint-staged/lint-staged)
+- Documentation site powered by Next.js (in `apps/docs`)
+- Dev sandbox app with Vite for local testing (in `apps/dev`)
+
+## Structure
+
+```
+.
+├── packages/
+│   └── [package-name]/   # Your library package
+├── apps/
+│   ├── dev/              # Vite dev sandbox for local testing
+│   └── docs/             # Next.js documentation site
+```
 
 ## Quick Start
 
@@ -23,9 +37,12 @@ A modern, opinionated TypeScript library starter template with best practices an
    pnpm install
    ```
 
-4. Update package details:
-   - Replace all `[*]` placeholders in `package.json` with your library details
-   - Customize the ESLint and TypeScript configurations as needed
+4. Update package details — replace all `[*]` placeholders in:
+   - `packages/[package-name]/package.json` (name, description, homepage, repository, bugs, size-limit)
+   - `apps/docs/content/docs/index.mdx` (package name, installation, quick start example)
+   - Rename `packages/[package-name]` to your actual package name
+
+5. Customize ESLint and TypeScript configurations as needed
 
 ## Setup GitHub Integration
 
@@ -42,14 +59,15 @@ A modern, opinionated TypeScript library starter template with best practices an
 
 ### Available Scripts
 
-- `pnpm build` - Build all packages
-- `pnpm lint:*` - Run various linting checks:
-  - `lint:eslint` - ESLint checks
-  - `lint:format` - Prettier formatting
-  - `lint:check-types` - TypeScript type checking
-  - `lint:size` - Bundle size analysis
-  - `lint:publint` - Package publishing validation
-  - `lint:attw` - Type resolution validation
+- `pnpm build` — Build all packages
+- `pnpm dev:packages` — Watch mode for all packages
+- `pnpm lint:eslint` — ESLint checks across all packages
+- `pnpm lint:format` — Prettier formatting
+- `pnpm lint:type-check` — TypeScript type checking
+- `pnpm lint:size` — Bundle size analysis
+- `pnpm lint:publint` — Package publishing validation
+- `pnpm lint:attw` — Type resolution validation
+- `pnpm test` — Run tests across all packages
 
 ### Publishing Updates
 
@@ -62,14 +80,11 @@ A modern, opinionated TypeScript library starter template with best practices an
 2. Follow the prompts to describe your changes
 3. Commit and push to GitHub
 4. A PR will be created by the Changeset bot
-5. Merging the PR will:
-   - Bump versions
-   - Create a GitHub release
-   - Publish to NPM
+5. Merging the PR will bump versions, create a GitHub release, and publish to NPM
 
 ## Continuous Integration
 
-The template includes GitHub Actions for:
+GitHub Actions handles:
 
 - Automated code formatting via [autofix.ci](https://autofix.ci)
 - Linting and type checking
@@ -77,6 +92,11 @@ The template includes GitHub Actions for:
 - Issue management (labeling and assignment)
 - Package testing with pkg.pr.new
 
+## Requirements
+
+- Node.js >= 18.x
+- pnpm >= 10.x
+
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome. Feel free to open a PR.

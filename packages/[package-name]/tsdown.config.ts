@@ -1,23 +1,23 @@
-import { type Options, defineConfig } from "tsup";
+import { defineConfig, type UserConfig } from "tsdown";
 
 const isDevMode = process.env.NODE_ENV === "development";
 
 const sharedOptions = {
-	clean: true, // clean up dist folder,
-	dts: true, // generate d.ts
-	entry: ["src/index.ts"],
+	clean: true,
+	dts: true,
 	format: ["esm"],
-	platform: "browser",
+	ignoreWatch: [".turbo"],
+	platform: "neutral",
 	sourcemap: !isDevMode,
-	splitting: true,
 	target: "esnext",
 	treeshake: true,
 	tsconfig: "tsconfig.json",
-} satisfies Options;
+} satisfies UserConfig;
 
 const config = defineConfig([
 	{
 		...sharedOptions,
+		entry: ["src/index.ts"],
 		name: "ESM",
 		outDir: "./dist/esm",
 	},
